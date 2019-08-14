@@ -1,0 +1,18 @@
+version: '3'
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: webserver
+    restart: always
+    volumes:
+      - .:/opt/zalgonator
+    ports:
+      - "80:80"
+    command: "webserver"
+    environment:
+      - GUNICORN_BIND=0.0.0.0:80
+      - GUNICORN_WORKERS=2
+      - GUNICORN_LOG_LEVEL=debug
+      - GUNICORN_AUTORELOAD=1
