@@ -4,22 +4,24 @@
     <h2>Enter text:</h2>
     <form action="" method="post">
         {{ form.hidden_tag() }}
-        <p>
+        <div>
             {{ form.textarea.label }}<br/>
             {{ form.textarea }}
-        </p>
-        <p>
-            {{ form.rng_check.label }} {{ form.rng_check }}
+        </div>
+        <div>
+            {{ form.rng_select.label }} {{ form.rng_select }} {{ form.bold_select.label }} {{ form.bold_select }}
+        </div>
+        <div>
             {{ form.rng_range_low.label }} {{ form.rng_range_low }} {{ form.rng_range_high.label }} {{ form.rng_range_high }}
-        </p>
-        <p>
+        </div>
+        <div>
             {{ form.submit() }}
-        </p>
+        </div>
     </form>
     <h2>Result:</h2>
     {% if zalgotext %}
-    <div>
-        {{ zalgotext }}
+    <div class="zoutput">
+        {{ zalgotext | safe }}
     </div>
     {% endif %}
 {% endblock %}

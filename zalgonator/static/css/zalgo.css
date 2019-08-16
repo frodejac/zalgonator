@@ -1,0 +1,12 @@
+.content {
+    max-width: 500px;
+    margin: auto;
+}
+
+form input[type=text] {
+    width: 50px;
+}
+
+.zoutput {
+    min-height: 100px;
+}
